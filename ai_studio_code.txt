@@ -1,0 +1,121 @@
+Hãy thiết kế và xây dựng một website hoàn chỉnh, đa trang (multi-page) và chuẩn responsive cho thương hiệu thiết kế & thi công nội thất gỗ cao cấp **"NỘI THẤT MINH NGỌC"** với phong cách sang trọng, ấm cúng và tinh tế, tuân thủ chính xác hệ thống thiết kế và bố cục sau:
+
+==================================================
+1. HỆ THỐNG THIẾT KẾ (DESIGN SYSTEM)
+==================================================
+- Bảng màu chủ đạo (Color Palette):
+  + Nền nâu đậm (Dark Espresso): #3A2A1D, #4B3626 (dùng cho các khối nền tối, overlay banner).
+  + Nền nâu ấm trung tính (Warm Mocha): #5C4634, #7A634E (dùng cho các section xen kẽ).
+  + Nền nâu xám nhạt (Taupe / Sand): #A89786, #C4B3A0 (dùng cho thanh Header bán trong suốt và Footer).
+  + Nền kem sáng (Warm Cream): #FBF5EE (dùng cho các trang Dự án, Tin tức, Chi tiết bài viết).
+  + Màu nhấn vàng đồng (Accent Gold): #D4B475, #E2C285 (dùng cho tiêu đề phụ, số thứ tự, đường viền mỏng, icon).
+  + Màu chữ: Trắng/Kem (#FFFFFF / #F5EDE4) trên nền tối; Nâu đậm (#3A281A) trên nền kem sáng.
+
+- Kiểu chữ (Typography):
+  + Font chính: Sans-serif hiện đại, rõ nét hỗ trợ tiếng Việt tốt (như Montserrat hoặc Be Vietnam Pro). Tiêu đề lớn viết HOA đậm (Uppercase, Bold).
+  + Font trang trí: Script/Chữ viết tay nghệ thuật mềm mại (như Great Vibes hoặc Alex Brush) dùng để nhấn nhá các cụm từ như: "Thiết kế", "Giới thiệu", "Sống trọn từng góc nhà", "Thông tin liên hệ".
+
+==================================================
+2. THÀNH PHẦN DÙNG CHUNG (GLOBAL COMPONENTS)
+==================================================
+- Thanh điều hướng (Header - cố định/trên cùng mọi trang):
+  + Nền nâu xám nhẹ hơi trong suốt (#A89786).
+  + Bên trái: Logo hình vuông nền nâu đậm, biểu tượng hình học lồng ghép màu vàng đồng kèm chữ "NOI THAT MINH NGOC".
+  + Bên phải: Menu điều hướng viết HOA gồm 6 mục: `TRANG CHỦ` | `GIỚI THIỆU` | `DỰ ÁN` | `TIN TỨC` | `LIÊN HỆ` | `TRỢ LÝ AI`. Trang đang hoạt động được tô trắng đậm.
+
+- Banner trước Footer (Pre-footer CTA Banner):
+  + Ảnh nền toàn chiều rộng chụp không gian phòng khách sofa gỗ hiện đại.
+  + Trên các trang Giới thiệu, Tin tức, Chi tiết bài viết có nút chữ nhật viền trắng nền nâu mờ ở giữa: `ĐẶT LỊCH TƯ VẤN VỚI NỘI THẤT MINH NGỌC` (bấm vào mở Form Đăng Ký Nhận Tư Vấn).
+
+- Chân trang (Footer):
+  + Nền màu kem cát/taupe (#C4B3A0), chữ đen/nâu đậm.
+  + Cột trái: Logo vuông lớn của Nội Thất Minh Ngọc.
+  + Cột phải: Tiêu đề `LIÊN HỆ` in đậm và danh sách thông tin kèm icon viền tròn mảnh:
+    * SĐT: 0975 154 775
+    * Địa chỉ: Thôn Phú An, Xã Hát Môn, Huyện Phúc Thọ, Hà Nội
+    * Thời gian mở cửa: 8h - 22h (Làm việc cả T7 & Chủ nhật)
+    * Email: noithatminhngoc@gmail.com
+    * Facebook: Nội Thất Minh Ngọc
+
+==================================================
+3. CHI TIẾT CÁC TRANG & BỐ CỤC
+==================================================
+
+--- TRANG 1: TRANG CHỦ (HOME) ---
+1. Hero Section: Ảnh nền phòng ngủ nội thất gỗ cao cấp phủ lớp tối. Chữ script lớn "Thiết kế" lồng lên dòng chữ in hoa đậm "NỘI THẤT GỖ CAO CẤP". Nút bấm viền trắng nền trong suốt bên phải: `ĐẶT LỊCH TƯ VẤN`. Dòng chữ nhỏ căn giữa phía dưới: "Uy tín, chất lượng với những sản phẩm độc bản".
+2. Section Giới thiệu nhanh (Nền nâu ấm #5C4634): Chia 2 cột.
+   - Cột trái: Tiêu đề vàng "NỘI THẤT MINH NGỌC", tiêu đề trắng lớn "ĐƠN VỊ THIẾT KẾ VÀ THI CÔNG NỘI THẤT", câu trích dẫn nghiêng *"Từ một bản vẽ đến một không gian đáng sống."*, đoạn giới thiệu ngắn và khung thống kê nền nâu mờ chứa 2 chỉ số màu vàng: `+21 Năm kinh nghiệm` và `+250 Công trình hoàn thiện`.
+   - Cột phải: Ảnh dọc không gian tủ bếp gỗ cao cấp.
+3. Section Dịch vụ (Nền nâu đậm #3A2A1D): Tiêu đề căn giữa "DỊCH VỤ NỘI THẤT MINH NGỌC" + mô tả ngắn. Chia 3 cột ảnh có viền vàng đồng mảnh:
+   - `TƯ VẤN`: Lắng nghe nhu cầu, định hình phong cách và giải pháp tối ưu.
+   - `THIẾT KẾ`: Hiện thực hóa ý tưởng qua bản vẽ 3D sáng tạo.
+   - `THI CÔNG`: Sản xuất và lắp đặt trực tiếp chuẩn xác, đảm bảo tiến độ.
+4. Section Bộ sưu tập dự án (Nền nâu nhạt #7A634E): Tiêu đề "BST dự án tại Nội thất Minh Ngọc". Bố cục lưới bất đối xứng (Bento Grid): 1 ảnh lớn bên trái ("Dự án Thiết kế nội thất Căn hộ cao cấp tại KĐT Thanh Hà") và 2 ảnh nhỏ xếp dọc bên phải ("Dự án Thiết kế nội thất Vinhome Ocean Park II", "Dự án Thiết kế nội thất văn phòng làm việc cao cấp").
+5. Section Dự án thực hiện (Nền nâu đậm): Tiêu đề "DỰ ÁN MINH NGỌC THỰC HIỆN". Một banner card lớn hiển thị ảnh nội thất phòng ngủ tối màu làm nền, góc dưới trái có tiêu đề "Dự án Thiết kế nội thất Cao cấp - Hà Nội" + nút tròn bo góc màu kem `XEM CHI TIẾT →`, góc phải xếp 3 ảnh thumbnail nhỏ xem trước.
+6. Section Đánh giá của khách hàng (Nền nâu họa tiết đường vân mảnh): Tiêu đề "ĐÁNH GIÁ CỦA KHÁCH HÀNG". Hiển thị 2 khung thẻ nền trắng chứa ảnh chụp màn hình tin nhắn phản hồi thực tế của khách hàng khen ngợi sản phẩm.
+
+--- TRANG 2: GIỚI THIỆU (ABOUT) ---
+1. Hero Banner: Ảnh nội thất sang trọng, căn giữa tiêu đề trắng "VỀ NỘI THẤT MINH NGỌC" và chữ script lớn "Giới thiệu".
+2. Section Kinh nghiệm & Quy trình (Nền nâu đậm): Chia 2 cột.
+   - Cột trái: Tiêu đề "HƠN 21 NĂM KIẾN TẠO KHÔNG GIAN BỀN VỮNG", đoạn mô tả, và thanh quy trình 5 bước nằm ngang có vòng tròn đánh số nối bằng đường kẻ vàng: `1. Đo đạc` — `2. Thiết kế` — `3. Sản xuất` — `4. Thi công` — `5. Bàn giao`.
+   - Cột phải: Bản đồ Việt Nam màu trắng (bao gồm cả Quần đảo Hoàng Sa và Quần đảo Trường Sa) có ngôi sao vàng đánh dấu vị trí tại Hà Nội.
+3. Section Chuyện Minh Ngọc (Nền nâu vừa): Tiêu đề lớn căn giữa "CHUYỆN MINH NGỌC". Chia 2 cột: Trái gồm `Tầm Nhìn`, `Sứ Mệnh`, `Giá Trị Cốt Lõi` (4 gạch đầu dòng: Tâm huyết, Tỉ mỉ, Uy tín, Độc bản); Phải là ảnh không gian làm việc gỗ ấm áp.
+4. Section 3 Thế mạnh nổi bật (Nền ảnh nội thất phủ tối): Bố cục 3 khối chữ vàng-trắng kèm logo công ty nổi bật: `1. Đội ngũ nhân sự giàu kinh nghiệm`, `2. Xưởng sản xuất trực tiếp khép kín`, `3. Mẫu mã luôn cập nhật xu hướng hiện đại`.
+5. Section Bộ sưu tập không gian: Tiêu đề chữ script lớn "Sống trọn từng góc nhà". 4 ảnh dọc có khung viền vàng mảnh (Phòng khách, Phòng ngủ, Phòng thờ gỗ truyền thống, Phòng ngủ trẻ em). Phía dưới là dòng chữ "Uy tín, chất lượng với những sản phẩm độc bản".
+
+--- TRANG 3: DỰ ÁN (PROJECTS) ---
+- Nền kem sáng (#FBF5EE), chữ nâu đậm.
+- Tiêu đề lớn căn giữa: "DỰ ÁN NỔI BẬT".
+- Thanh bộ lọc dạng nút pill căn giữa: `TẤT CẢ` (nút đang chọn tô nâu #826B56 chữ trắng) | `PHÒNG KHÁCH` | `PHÒNG BẾP` | `PHÒNG NGỦ` | `KHÁC`.
+- Hiển thị hàng 3 thẻ nổi bật trên cùng (Biệt thự, Nhà phố, Căn hộ chung cư) kèm nút viền tròn `XEM THÊM →`.
+- Lưới danh sách dự án bên dưới (3 cột cho tab "Tất cả" với khoảng 12 dự án đa dạng từ biệt thự, nhà phố, chung cư đến quán cafe, văn phòng; và lưới 2 cột ảnh lớn khi lọc theo từng danh mục cụ thể như Phòng khách, Phòng bếp, Phòng ngủ, Khác).
+- Mỗi thẻ dự án có ảnh bo góc, tiêu đề IN HOA ĐẬM căn giữa, bên dưới là dòng thông tin nhỏ: `Phong cách: [Tân cổ điển/Hiện đại/Cổ điển...] | Diện tích: [XXm2]`. Bấm vào thẻ có thể xem chi tiết dự án.
+
+--- TRANG 4: TIN TỨC (NEWS / BLOG) ---
+- Nền kem sáng (#FBF5EE).
+- Hero Banner: Ảnh phòng ăn sang trọng phủ lớp tối nhẹ, chữ lớn căn giữa "GÓC CẢM HỨNG" + dòng mô tả *"Kiến thức, xu hướng và những câu chuyện phía sau mỗi không gian sống."*
+- Section "TIN TỨC NỔI BẬT": Card lớn 2 cột (Ảnh bên trái; bên phải gồm nhãn vàng `KINH NGHIỆM THIẾT KẾ`, tiêu đề đậm *"5 nguyên tắc thiết kế nội thất giúp căn hộ nhỏ rộng rãi hơn"*, đoạn tóm tắt chữ nghiêng và nút nâu đậm `ĐỌC BÀI VIẾT →`).
+- Section "KHÁM PHÁ TIN TỨC":
+  + Thanh bộ lọc dạng pill: `Tất cả` | `Cảm hứng` | `Vật liệu` | `Kinh nghiệm` | `Chuyện Minh Ngọc` (Tab đang chọn nền nâu đậm chữ trắng).
+  + Lưới 3 cột các bài viết: Ảnh chữ nhật, nhãn danh mục màu vàng, tiêu đề bài viết đậm, đoạn mô tả ngắn chữ nghiêng và link `Xem chi tiết →`.
+  + Thanh phân trang bên dưới (`<  1  2  >`), hoạt động mượt mà khi chuyển trang hoặc lọc theo danh mục.
+
+--- TRANG 5: CHI TIẾT BÀI VIẾT (ARTICLE DETAIL) ---
+- Nền kem sáng (#FBF5EE). Chia bố cục 2 cột: Nội dung bài viết chính (70% bên trái) và Sidebar "BÀI VIẾT LIÊN QUAN" (30% bên phải).
+- Cột chính:
+  + Breadcrumb: `Trang chủ › Tin tức › [Tên bài viết]`.
+  + Nhãn danh mục màu vàng (`KINH NGHIỆM` hoặc `VẬT LIỆU`), tiêu đề lớn đậm, dòng tác giả (`Nội thất Minh Ngọc` kèm avatar logo nhỏ) và ngày đăng (`19 Tháng 10, 2026`).
+  + Ảnh bìa lớn và đoạn mở đầu.
+  + Nội dung chia thành các mục đánh số `01`, `02`, `03`, `04`, `05` (số màu vàng lớn, tiêu đề đậm, có đường kẻ ngang phân tách): Mỗi mục trình bày chữ bên trái và ảnh minh họa bên phải. Riêng các bài so sánh (như bài *Gỗ tự nhiên và gỗ công nghiệp*) hỗ trợ hiển thị bảng so sánh (Table) viền nâu nhạt nền kem xen kẽ ngay trong mục 03.
+- Sidebar phải: Tiêu đề `BÀI VIẾT LIÊN QUAN`, danh sách thẻ ngang nhỏ gồm ảnh thumbnail bên trái, tiêu đề đậm và ngày đăng chữ nghiêng bên phải.
+
+--- TRANG 6: LIÊN HỆ (CONTACT) ---
+1. Hero Banner: Ảnh không gian bếp hiện đại, chữ script lớn *"Thông tin liên hệ"* lồng lên chữ `"NỘI THẤT MINH NGỌC"`, nút viền trắng `ĐĂNG KÝ NHẬN TƯ VẤN`.
+2. Section Thông tin công ty & Bản đồ (Nền nâu đậm): Tiêu đề "CÔNG TY TNHH NỘI THẤT MINH NGỌC". Chia 2 cột: Trái hiển thị đoạn giới thiệu ngắn và đầy đủ Email, Showroom, SĐT, link Facebook, link TikTok (`tiktok.com/@.ni.tht.minh.ngc`); Phải nhúng khung bản đồ Google Maps định vị tại Thôn Phú An, Hát Môn, Phúc Thọ, Hà Nội.
+3. Dải họa tiết hoa văn vàng đồng chạy ngang ngăn cách 2 section.
+4. Section Cam kết & Form tư vấn (Nền nâu ấm): Chia 2 cột.
+   - Trái: Ảnh phòng khách bộ bàn ghế gỗ nguyên khối, tiêu đề "NỘI THẤT MINH NGỌC" và 3 cam kết kèm icon vàng: `Cốt Gỗ Chuẩn E1`, `Nghiệm Thu Mộc Tại Xưởng`, `Bảo Hành 02 Năm Kết Cấu`.
+   - Phải: Hộp viền vàng mảnh tiêu đề `ĐĂNG KÝ TƯ VẤN` gồm các ô nhập: `HỌ VÀ TÊN`, `SĐT`, `Email`, `GHI CHÚ` (textarea) và nút trắng chữ vàng `GỬI THÔNG TIN`.
+
+--- TRANG / MODAL: ĐĂNG KÝ NHẬN TƯ VẤN ---
+- Mở ra khi người dùng bấm các nút CTA `ĐẶT LỊCH TƯ VẤN` hoặc `ĐĂNG KÝ NHẬN TƯ VẤN`.
+- Nền toàn màn hình là ảnh phòng khách làm mờ tông nâu ấm.
+- Chính giữa là tiêu đề lớn `ĐĂNG KÝ NHẬN TƯ VẤN` (phối màu vàng đồng và trắng) đặt phía trên hộp Form nền nâu đậm (#423020) viền vàng mảnh.
+- Các trường thông tin (nhãn chữ vàng đồng, ô nhập nền tối viền mảnh):
+  + `HỌ VÀ TÊN`
+  + `SĐT`
+  + `KHU VỰC TẠI HÀ NỘI`
+  + `HÌNH THỨC TRAO ĐỔI`: 3 nút/tùy chọn xếp dọc chọn được (`GỌI SĐT`, `NHẮN ZALO`, `KHẢO SÁT TẠI NHÀ`)
+  + `GHI CHÚ` (khung nhập lớn)
+  + Nút gửi nền trắng chữ vàng đồng: `GỬI THÔNG TIN` (kèm thông báo gửi thành công khi submit).
+
+--- MỤC TRỢ LÝ AI (trên thanh Menu) ---
+- Khi bấm vào `TRỢ LÝ AI` trên Header, mở giao diện hoặc khung chat Trợ lý AI tư vấn thiết kế & báo giá sơ bộ nội thất mang phong cách đồng bộ nâu đậm - vàng đồng của Nội Thất Minh Ngọc.
+
+==================================================
+4. YÊU CẦU TƯƠNG TÁC & KỸ THUẬT
+==================================================
+- Website chạy mượt mà giữa các trang/route (Trang chủ, Giới thiệu, Dự án, Tin tức, Chi tiết bài viết, Liên hệ, Đăng ký tư vấn, Trợ lý AI).
+- Toàn bộ bộ lọc danh mục ở trang Dự án, trang Tin tức và phân trang phải hoạt động tương tác thực tế.
+- Các form đăng ký có kiểm tra dữ liệu đầu vào (validation) và hiển thị thông báo xác nhận khi gửi.
+- Tối ưu hiển thị đẹp mắt trên cả Desktop, Tablet và Mobile (Responsive).
