@@ -1,0 +1,228 @@
+{
+  "name": "02 - Facebook Analytics Agent",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "bac51e05-008b-4697-a055-ef7cc3f3e80c",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1wB-L_X2D-GByl9wEF3APVsTOfc5X00BjatchhG7RZD4",
+          "mode": "list",
+          "cachedResultName": " AI Agent - Facebook Analytics",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1wB-L_X2D-GByl9wEF3APVsTOfc5X00BjatchhG7RZD4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 322636915,
+          "mode": "list",
+          "cachedResultName": "facebook_posts",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1wB-L_X2D-GByl9wEF3APVsTOfc5X00BjatchhG7RZD4/edit#gid=322636915"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        224,
+        0
+      ],
+      "id": "876d4301-08b4-4f2b-a237-b2fe34a0d110",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "olf4lGSE1ThANzWr",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=={{ `Bạn là Facebook Content Analyst, chuyên phân tích hiệu quả nội dung trên Facebook Page của nhóm. \n\nDữ liệu bài đăng thực tế được truyền vào từ hệ thống:\n${JSON.stringify($json, null, 2)}\n\nHãy thực hiện phân tích dữ liệu trên theo đúng các yêu cầu sau:\n1. So sánh reach, reactions, comments, shares và link clicks (nếu có trong dữ liệu).\n2. Tính tỷ lệ tương tác (ER) dựa trên dữ liệu thực tế và nêu rõ công thức áp dụng.\n3. Xác định bài đăng có kết quả nổi bật theo từng chỉ số.\n4. Nhận xét định dạng hoặc chủ đề dựa trên dữ liệu vừa nhận.\n5. Đề xuất 3 hướng cải thiện nội dung Facebook cụ thể.\n\nLưu ý:\n- Phân tích trực tiếp dữ liệu được cung cấp ở trên, TUYỆT ĐỐI KHÔNG dùng dữ liệu giả định hay yêu cầu người dùng gửi thêm dữ liệu.\n- Không bịa dữ liệu, không mặc định reach cao đồng nghĩa với chuyển đổi cao.\n- Nếu thiếu dữ liệu click/chuyển đổi, hãy nêu rõ chưa đủ căn cứ đánh giá.\n\nCấu trúc đầu ra:\n- I. Tổng quan\n- II. So sánh bài đăng\n- III. Nhận định bài đăng nổi bật\n- IV. Nhận định định dạng & chủ đề\n- V. Đề xuất cải thiện\n- VI. Hạn chế dữ liệu` }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        672,
+        0
+      ],
+      "id": "083eba28-76fc-4afa-9e0d-83683674aa97",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        560,
+        208
+      ],
+      "id": "9083e9ee-69e5-42a3-b015-db3de15d6d9e",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": null,
+          "name": "",
+          "__aiGatewayManaged": true
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        448,
+        0
+      ],
+      "id": "6bbb29e8-b1df-4683-be52-1fe4b7af8290",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "folderId": "123d-BXG2i_wa8S0nDfAXFB30fX8Erhez",
+        "title": "BAO CAO FB"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1040,
+        0
+      ],
+      "id": "aac57e24-8035-4125-8c52-4c918c6a89e7",
+      "name": "Create a document",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "xo5bl76Fkt0YaOHR",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "={{ $json.id }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $('AI Agent').item.json.output }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1264,
+        0
+      ],
+      "id": "c0a6d906-2e23-4eb3-835b-3b494f633e7e",
+      "name": "Update a document",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "xo5bl76Fkt0YaOHR",
+          "name": "Google Docs account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Create a document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a document": {
+      "main": [
+        [
+          {
+            "node": "Update a document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "9291d94c-0886-45aa-b672-c2a6f7757136",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b1ed2e9370d8a986c910e383cf87fc76dfba610736b860dc87c5da2032658a80"
+  },
+  "nodeGroups": [],
+  "id": "elL64jJoqbWKmn42",
+  "tags": []
+}
