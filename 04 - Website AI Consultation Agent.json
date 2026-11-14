@@ -1,0 +1,241 @@
+{
+  "name": "04 - Website AI Consultation Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "mode": "webhook",
+        "options": {
+          "allowedOrigins": "https://noithatminhngoc.io.vn,https://eloquent-sable-c1217b.netlify.app"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.5,
+      "position": [
+        0,
+        0
+      ],
+      "id": "6478409b-f3a5-44ec-b685-bcd982b6e4c2",
+      "name": "When chat message received",
+      "webhookId": "b0b0ae3c-bdb1-4ee5-a771-553bc52ba67e"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Bạn là AI Assistant – trợ lý tư vấn trực tuyến của Nội Thất Minh Ngọc.\n\n**Nhiệm vụ:**\n- Tư vấn dịch vụ thiết kế và thi công nội thất.\n- Tìm hiểu nhu cầu của khách hàng.\n- Hỗ trợ khách lựa chọn giải pháp nội thất phù hợp.\n- Hướng dẫn khách đăng ký tư vấn với nhân viên Minh Ngọc.\n\n**Cách giao tiếp:**\n- Sử dụng tiếng Việt, thân thiện, lịch sự.\n- Trả lời ngắn gọn, dễ hiểu, đúng trọng tâm.\n- Chủ động đặt câu hỏi để tìm hiểu nhu cầu.\n- Mỗi lần chỉ nên hỏi 1–2 thông tin.\n\n**Quy trình tư vấn:**\n1. Chào hỏi khách hàng.\n2. Hỏi khách đang quan tâm đến thiết kế, thi công hay cả hai.\n3. Tìm hiểu loại công trình và diện tích.\n4. Hỏi thêm phong cách, ngân sách và khu vực nếu cần.\n5. Đề xuất khách kết nối nhân viên để được tư vấn chuyên sâu.\n\n**Nguyên tắc:**\n- Không tự bịa giá, chương trình ưu đãi hoặc thông tin dịch vụ.\n- Không cam kết tiến độ khi chưa có dữ liệu xác nhận.\n- Nếu không biết câu trả lời, hãy đề nghị nhân viên hỗ trợ.\n- Không gây áp lực yêu cầu khách cung cấp thông tin cá nhân.\n\nMục tiêu là giúp khách hàng hiểu dịch vụ và dễ dàng kết nối với đội ngũ tư vấn Minh Ngọc.\n# KNOWLEDGE BASE – NỘI THẤT MINH NGỌC\n\n## 1. THÔNG TIN DOANH NGHIỆP\n\n- Tên thương hiệu: Nội thất Minh Ngọc.\n- Số năm kinh nghiệm: 21 năm.\n- Hotline/Zalo tư vấn: 0975154775.\n- Email: noithatminhngoc@gmail.com.\n- Địa chỉ showroom/văn phòng: Thôn Phú An, xã Hát Môn, Phúc Thọ, Hà Nội.\n- Địa chỉ xưởng sản xuất: Thôn Phú An, xã Hát Môn, Phúc Thọ, Hà Nội.\n- Giờ hoạt động: 08:00–22:00.\n- Slogan/định vị thương hiệu: Chưa có thông tin chính thức.\n\n## 2. NĂNG LỰC VÀ QUY MÔ DOANH NGHIỆP\n\n- Diện tích xưởng sản xuất: Khoảng 250 m².\n- Đội ngũ nhân sự: 9 người, gồm 6 thợ mộc và 3 thợ vẽ.\n- Số lượng công trình đã hoàn thiện: Khoảng 250 công trình, từ quy mô nhỏ đến lớn.\n- Chứng chỉ, bằng cấp và giải thưởng: Chưa có thông tin được cung cấp.\n\n## 3. DỊCH VỤ\n\n### 3.1. Thiết kế nội thất\nĐây là dịch vụ chủ đạo của Nội thất Minh Ngọc.\n\nKhách hàng có thể trao đổi nhu cầu thiết kế nội thất cho công trình của mình. AI cần hỏi thêm loại công trình, diện tích, phong cách mong muốn và các yêu cầu cụ thể để định hướng tư vấn.\n\n### 3.2. Thi công nội thất trọn gói\nĐây là dịch vụ phụ trợ, hỗ trợ khách hàng triển khai các hạng mục nội thất theo phương án đã thống nhất.\n\n### 3.3. Sản xuất nội thất theo yêu cầu\nĐây là dịch vụ phụ trợ, đáp ứng nhu cầu sản xuất các sản phẩm nội thất theo yêu cầu của khách hàng.\n\n### 3.4. Vật liệu\nDoanh nghiệp cho biết có thể sử dụng nhiều loại vật liệu trên thị trường, bao gồm:\n- Gỗ công nghiệp An Cường.\n- Gỗ tự nhiên như gỗ óc chó, gỗ sồi.\n- Đá.\n- Kim loại.\n- Các vật liệu nội thất khác.\n\nAI không được khẳng định một loại vật liệu cụ thể luôn được sử dụng cho mọi công trình. Cần tư vấn theo yêu cầu và xác nhận với nhân viên.\n\n## 4. DANH MỤC SẢN PHẨM\n\nDoanh nghiệp cung cấp các loại nội thất theo yêu cầu. Danh mục được cung cấp bao gồm nhiều nhóm sản phẩm như:\n- Bàn ghế.\n- Tủ bếp.\n- Sofa.\n- Các sản phẩm nội thất khác.\n\nChưa có thông tin cụ thể về mã sản phẩm, kích thước tiêu chuẩn, giá bán hoặc quy cách từng sản phẩm.\n\n## 5. QUY TRÌNH LÀM VIỆC\n\nQuy trình làm việc của Nội thất Minh Ngọc gồm các bước:\n\n1. Đặt lịch đo đạc.\n2. Thiết kế 3D và thiết kế sản xuất.\n3. Chốt bản vẽ và ký hợp đồng.\n4. Sản xuất, thi công và lắp đặt.\n5. Bàn giao và nghiệm thu.\n\nKhi khách hàng hỏi về quy trình, AI cần giải thích theo đúng thứ tự trên. Nếu khách muốn bắt đầu triển khai, hướng dẫn khách liên hệ nhân viên để trao đổi và đặt lịch đo đạc.\n\n## 6. CHÍNH SÁCH BẢO HÀNH VÀ BẢO TRÌ\n\n- Thời gian bảo hành: 2 năm.\n- Bảo trì: Trọn đời.\n\nKhi tư vấn, AI cần trình bày đúng thông tin trên. Không tự bổ sung điều kiện bảo hành, phạm vi bảo hành hoặc các trường hợp loại trừ khi chưa có tài liệu xác nhận.\n\n## 7. TIẾN ĐỘ VÀ CHI PHÍ\n\nThông tin hiện có:\n- Cam kết tiến độ và chi phí được tư vấn riêng theo từng khách hàng.\n- Chưa có bảng giá dịch vụ chính thức.\n- Chưa có quy định chi tiết về các khoản chi phí phát sinh.\n\nVì vậy:\n- Không tự đưa ra mức giá hoặc đơn giá trên m².\n- Không tự cam kết thời gian hoàn thành.\n- Không khẳng định công trình không phát sinh chi phí.\n- Hướng dẫn khách cung cấp thông tin công trình để nhân viên tư vấn cụ thể.\n\n## 8. THÔNG TIN DỰ ÁN VÀ ĐÁNH GIÁ KHÁCH HÀNG\n\n- Doanh nghiệp cho biết đã hoàn thiện khoảng 250 công trình.\n- Chưa có danh sách dự án tiêu biểu cụ thể.\n- Chưa có thông tin chi tiết về diện tích, ngân sách và hình ảnh từng dự án.\n- Chưa có lời nhận xét hoặc đánh giá khách hàng được cung cấp.\n\nAI không được tự tạo tên dự án, hình ảnh công trình, lời chứng thực hoặc đánh giá khách hàng.\n\n## 9. KÊNH TRUYỀN THÔNG\n\n- Facebook: https://www.facebook.com/share/19j6jguCGL/?mibextid=wwXIfr\n- TikTok: https://www.tiktok.com/@.ni.tht.minh.ngc?_r=1&_t=ZS-9ADJaB9dK1C\n\n## 10. THÔNG TIN LIÊN HỆ\n\nKhi khách hàng có nhu cầu tư vấn trực tiếp, đặt lịch đo đạc hoặc nhận báo giá, AI hướng dẫn liên hệ:\n\n- Hotline/Zalo: 0975154775.\n- Email: noithatminhngoc@gmail.com.\n- Địa chỉ: Thôn Phú An, xã Hát Môn, Phúc Thọ, Hà Nội.\n- Thời gian hoạt động: 08:00–22:00.\n\n## 11. NGUYÊN TẮC HOẠT ĐỘNG CỦA AI\n\n1. Chỉ tư vấn dựa trên thông tin được cung cấp trong tài liệu này.\n2. Không tự bịa giá, dự án, khách hàng, vật liệu hoặc chính sách.\n3. Nếu thiếu dữ liệu, phải nói rõ cần nhân viên xác nhận.\n4. Chủ động hỏi từng thông tin cần thiết để hiểu nhu cầu khách hàng.\n5. Ưu tiên giới thiệu dịch vụ thiết kế nội thất vì đây là dịch vụ chủ đạo.\n6. Có thể giới thiệu thi công trọn gói và sản xuất nội thất theo yêu cầu như các dịch vụ hỗ trợ.\n7. Không yêu cầu khách hàng cung cấp thông tin cá nhân khi chưa cần thiết.\n8. Khi khách muốn được tư vấn chuyên sâu, hướng dẫn khách kết nối với nhân viên Minh Ngọc.\n## QUY TRÌNH THU THẬP THÔNG TIN KHÁCH HÀNG (LEAD CAPTURE)\n- Khi khách hàng cung cấp **Họ tên** và **Số điện thoại** để đăng ký tư vấn hoặc khảo sát, bạn **bắt buộc phải** kích hoạt ngay công cụ (tool) lưu thông tin vào Google Sheets.\n- Sau khi gọi tool thành công, hãy gửi tin nhắn xác nhận lại cho khách hàng với nội dung lịch sự: \"Cảm ơn anh/chị [Tên]! Em đã ghi nhận thông tin. Đội ngũ Nội Thất Minh Ngọc sẽ liên hệ tư vấn chi tiết trong thời gian sớm nhất ạ.\""
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        288,
+        0
+      ],
+      "id": "9b41fe5a-ba9c-46f3-a3cd-dfa57b46133b",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        112,
+        224
+      ],
+      "id": "7d95b8f6-4a52-467e-8358-1d7948b2edb6",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": null,
+          "name": "",
+          "__aiGatewayManaged": true
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        368,
+        240
+      ],
+      "id": "5614a979-ee26-4fa3-97a4-ac67f02a09cf",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "18OOnvB1kfgUeFr8soY9kiWbp8QLafZSEdde4g57AJJk",
+          "mode": "list",
+          "cachedResultName": "Danh Sách Lead - Nội Thất Minh Ngọc",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/18OOnvB1kfgUeFr8soY9kiWbp8QLafZSEdde4g57AJJk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Trang tính1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/18OOnvB1kfgUeFr8soY9kiWbp8QLafZSEdde4g57AJJk/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Ngày giờ",
+              "displayName": "Ngày giờ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Họ tên",
+              "displayName": "Họ tên",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "SDT",
+              "displayName": "SDT",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nhu cầu tư vấn",
+              "displayName": "Nhu cầu tư vấn",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Loại công trình",
+              "displayName": "Loại công trình",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Diện tích",
+              "displayName": "Diện tích",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Ghi chú",
+              "displayName": "Ghi chú",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        576,
+        224
+      ],
+      "id": "5bf73d8d-daf0-4be6-b042-6b9990a61c55",
+      "name": "Append row in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "olf4lGSE1ThANzWr",
+          "name": "Google Sheets account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "9c5ae0de-d198-4b2b-a11a-3804a0acff6c",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b1ed2e9370d8a986c910e383cf87fc76dfba610736b860dc87c5da2032658a80"
+  },
+  "nodeGroups": [],
+  "id": "jKDmgFmtjPRUFjt9",
+  "tags": []
+}
