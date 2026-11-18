@@ -1,0 +1,192 @@
+{
+  "name": "Lên nội dung content",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1u1F_ogBMXwzDMwEDvkby0546f-NpQ9B27wswNDM-qRY",
+          "mode": "list",
+          "cachedResultName": "Content NTMN",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u1F_ogBMXwzDMwEDvkby0546f-NpQ9B27wswNDM-qRY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Trang tính1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1u1F_ogBMXwzDMwEDvkby0546f-NpQ9B27wswNDM-qRY/edit#gid=0"
+        },
+        "event": "rowAdded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "14cb1493-2056-4a29-aeae-deea9ff713e2",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "wcppaGKxCG1hxI0t",
+          "name": "Google Sheets Trigger account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Hãy viết một bài viết chuẩn SEO chuyên sâu dựa trên từ khóa chính sau: {{ $json['Từ khóa chính'] }}",
+        "options": {
+          "systemMessage": "\"Bạn là một chuyên gia Content Marketing và SEO Copywriter hàng đầu. Hãy viết một bài viết hoàn chỉnh bằng tiếng Việt bao gồm: Tiêu đề H1 dưới 65 ký tự chứa từ khóa, Meta Description dưới 155 ký tự, phần Mở bài thu hút, Thân bài chia rõ các thẻ H2/H3 có bullet points, và Kết bài kèm CTA tự nhiên.\""
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "197337f0-7356-4e6b-9536-5db528a68e96",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-4-carbon",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        224,
+        176
+      ],
+      "id": "d078ebfd-39e7-413a-ad76-4e3b28cdd4a5",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": null,
+          "name": "",
+          "__aiGatewayManaged": true
+        }
+      }
+    },
+    {
+      "parameters": {
+        "folderId": "1f8HR9HYfLB_Oryx5FE45h0Urk61swfMt",
+        "title": "=Bài viết - {{ $json.Tu_khoa_chinh }}"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        592,
+        0
+      ],
+      "id": "fa73456c-3a4e-44c8-b73f-15b1611b17e8",
+      "name": "Create a document",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "Fr7Ly7YohdqUzv55",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "={{ $json.id }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $('AI Agent').item.json.output }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        816,
+        0
+      ],
+      "id": "e3fc1fcf-e22d-4f19-8e2f-9ffcfda306ce",
+      "name": "Update a document",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "Fr7Ly7YohdqUzv55",
+          "name": "Google Docs account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Create a document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a document": {
+      "main": [
+        [
+          {
+            "node": "Update a document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "fd06cc76-ec75-4f47-b5d3-bcf27c2b3dbc",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "fd18e1d938e894c745c84015c3cabc01925d805acd3fceb0bd880b13b04fbf56"
+  },
+  "nodeGroups": [],
+  "id": "RSv5EPdKtsKWjfcK",
+  "tags": []
+}
